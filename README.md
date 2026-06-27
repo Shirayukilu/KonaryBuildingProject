@@ -43,3 +43,96 @@
 
 ## 📁 项目结构（标准化）
 
+---
+
+## ⚙️ GitHub Actions 参数说明
+
+### Kernel 构建参数
+
+| 参数 | 说明 |
+|----|----|
+| `KERNEL_REPO` | 内核源码仓库 |
+| `KERNEL_BRANCH` | 内核分支 |
+| `DEVICE_TREE_REPO` | 设备树仓库 |
+| `DEFCONFIG` | 内核配置文件 |
+| `ENABLE_KSU` | 是否启用 KernelSU |
+| `ENABLE_SUSFS` | 是否启用 SusFS |
+| `VERSION_TAG` | 自定义版本后缀 |
+
+### TWRP 构建参数
+
+| 参数 | 说明 |
+|----|----|
+| `TWRP_REPO` | TWRP 源码仓库 |
+| `TWRP_BRANCH` | TWRP 分支 |
+| `DEVICE` | 设备代号（opd2101） |
+| `RECOVERY_VARIANT` | recovery / bootimage |
+
+---
+
+## 📦 构建产物
+
+| 类型 | 路径 | 用途 |
+|----|----|----|
+| Kernel | `out/arch/arm64/boot/Image.gz-dtb` | 刷机 / AnyKernel3 |
+| TWRP | `out/target/product/opd2101/recovery.img` | Recovery 刷入 |
+| ZIP | `kernel-anykernel3-*.zip` | 一键刷机包 |
+
+---
+
+## 🧠 技术说明（重要）
+
+### 工具链策略
+- **Kernel**：优先 Clang 20，GCC 4.9 作为兼容兜底
+- **TWRP**：严格使用 Android 官方预编译工具链
+- **禁止混用宿主 gcc / clang**
+
+### 闭源驱动处理
+- 驱动仓库独立管理
+- 编译期注入 `vendor/`
+- 不提交二进制至主仓库
+
+### Git 规范
+- 源码与工具链分离
+- 工具链通过 Release / Submodule 管理
+- `.gitignore` 屏蔽所有构建产物
+
+---
+
+## 🛠️ 常见问题
+
+### Q1：TWRP 编译失败，提示 soong 错误？
+> 确认使用的是 **Android 12.1+ 源码 + JDK 11**，并确保 `repo sync` 完整。
+
+### Q2：Kernel 编译时报 GCC 无法执行？
+> 本项目 GCC 为 Python wrapper，需通过 `aarch64-linux-android-gcc.real` 调用，详见 `build_env.sh`。
+
+### Q3：刷入后无法开机？
+> 确认：
+> - Kernel / TWRP 版本匹配
+> - Bootloader 未锁
+> - 已备份原厂镜像
+
+---
+
+## 📜 开源协议
+
+本项目基于 **GPL-3.0** 发布，遵循 Linux Kernel 及 Android Open Source Project 相关规定。  
+所有修改均保留原始版权声明，衍生作品须以相同协议开源。
+
+---
+
+## 🙏 致谢
+
+- Qualcomm / OPPO 官方源码
+- LineageOS / OmniROM / TWRP 团队
+- KernelSU / SusFS 社区
+- Android LLVM Toolchain 团队
+
+---
+
+> 💡 **KonaryBuildProject 不是一个“脚本集合”，而是一个长期维护的 Android 底层工程。**  
+> 欢迎 Issue / PR / 讨论，共建 OPPO Pad 的开放生态。
+
+⭐ 如果本项目对你有帮助，请点亮一颗 Star。
+
