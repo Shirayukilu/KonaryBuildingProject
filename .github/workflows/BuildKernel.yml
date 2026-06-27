@@ -1,0 +1,19 @@
+name: 构建内核 (Kernel)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 检出项目
+      uses: actions/checkout@v4
+
+    - name: 占位说明
+      run: |
+        echo "Kernel 构建流程尚未启用"
+        echo "后续将在此处集成："
+        echo "- msm-4.19 内核编译"
+        echo "- GCC / Clang 工具链切换"
+        echo "- KernelSU / SusFS 支持"

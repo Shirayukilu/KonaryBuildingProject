@@ -1,0 +1,19 @@
+name: 构建 TWRP (Recovery)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 检出项目
+      uses: actions/checkout@v4
+
+    - name: 占位说明
+      run: |
+        echo "TWRP 构建流程尚未启用"
+        echo "后续将在此处集成："
+        echo "- TWRP 12.1 / OmniROM 源码"
+        echo "- OPD2101 设备树"
+        echo "- Recovery Image 输出"
