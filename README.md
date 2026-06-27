@@ -4,8 +4,8 @@
 > 面向 **OPPO Pad (OPD2101 / SM8250-ac)** 的一体化 Android 编译工程  
 > 基于开源源码深度重构，支持 **Kernel / TWRP** 云端一键构建，打造稳定、可控、可持续维护的底层生态。
 
-[![Kernel Build](https://img.shields.io/github/actions/workflow/status/Shirayukilu/KonaryBuildProject/kernel.yml?branch=main&label=Kernel&style=flat-square)](https://github.com/Shirayukilu/KonaryBuildProject/actions)
-[![TWRP Build](https://img.shields.io/github/actions/workflow/status/Shirayukilu/KonaryBuildProject/twrp.yml?branch=main&label=TWRP&style=flat-square)](https://github.com/Shirayukilu/KonaryBuildProject/actions)
+[![Kernel Build](https://img.shields.io/github/actions/workflow/status/Shirayukilu/KonaryBuildProject/kernel.yml?branch=main&label=Kernel&style=flat-square)](https://github.com/Shirayukilu/KonaryBuildingProject/actions/workflows/BuildKernel.yml)
+[![TWRP Build](https://img.shields.io/github/actions/workflow/status/Shirayukilu/KonaryBuildProject/twrp.yml?branch=main&label=TWRP&style=flat-square)](https://github.com/Shirayukilu/KonaryBuildingProject/actions/workflows/BuildTWRP.yml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-SM8250-lightgrey.svg?style=flat-square)](https://www.qualcomm.com/smartphones/products/8-series/snapdragon-870-5g-mobile-platform)
 [![Device](https://img.shields.io/badge/device-OPPO%20Pad%20(OPD2101)-green.svg?style=flat-square)](https://www.oppo.com/cn/accessories/oppo-pad/)
