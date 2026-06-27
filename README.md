@@ -1,4 +1,6 @@
 # 🛠️ KonaryBuildProject
+"为什么是Building,编译只有进行时！！！"
+"Why "Building"? Compilation can only occur during runtime.！！！"
 > 面向 **OPPO Pad (OPD2101 / SM8250-ac)** 的一体化 Android 编译工程  
 > 基于开源源码深度重构，支持 **Kernel / TWRP** 云端一键构建，打造稳定、可控、可持续维护的底层生态。
 
